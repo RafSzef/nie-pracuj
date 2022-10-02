@@ -26,6 +26,7 @@ public class CompanyMapper {
                 .name(companyDto.getName())
                 .build();
     }
+
     public Company toNewEntity(CompanyDto companyDto) {
         return Company.builder()
                 .address(companyDto.getAddress())

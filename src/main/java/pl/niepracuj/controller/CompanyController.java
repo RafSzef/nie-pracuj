@@ -20,7 +20,7 @@ public class CompanyController {
     }
 
     @PostMapping("/create")
-    public CompanyDto createCompany(@RequestBody CompanyDto companyDto){
+    public CompanyDto createCompany(@RequestBody CompanyDto companyDto) {
         return companyService.createCompany(companyDto);
     }
 }

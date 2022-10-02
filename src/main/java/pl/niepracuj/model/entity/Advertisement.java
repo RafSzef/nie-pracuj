@@ -21,9 +21,10 @@ public class Advertisement {
     @Column(name = "expire_date")
     private Instant expireDate;
     @Column(name = "salary_from")
-    private long salaryFrom;
+    private Long salaryFrom;
     @Column(name = "salary_to")
-    private long salaryTo;
+    private Long salaryTo;
+    private String description;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

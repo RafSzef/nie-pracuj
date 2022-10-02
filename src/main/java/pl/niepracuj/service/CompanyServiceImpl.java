@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyRepository companyRepository;
     private final CompanyMapper companyMapper;
+
     @Override
     public List<CompanyDto> getAllCompanies() {
         return companyRepository.findAll().stream().map(companyMapper::toDto)
