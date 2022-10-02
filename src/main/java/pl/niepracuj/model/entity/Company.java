@@ -1,8 +1,6 @@
 package pl.niepracuj.model.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,6 +9,8 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
