@@ -3,7 +3,7 @@ package pl.niepracuj.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Set;
+
 @Entity
 @Table(name = "companies")
 @Getter

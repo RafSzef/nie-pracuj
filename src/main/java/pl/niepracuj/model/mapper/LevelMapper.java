@@ -21,6 +21,7 @@ public class LevelMapper {
                 .score(levelDto.getScore())
                 .build();
     }
+
     public Level toNewEntity(LevelDto levelDto) {
         return Level.builder()
                 .name(levelDto.getName())

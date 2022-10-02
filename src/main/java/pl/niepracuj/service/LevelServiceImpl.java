@@ -3,7 +3,6 @@ package pl.niepracuj.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.niepracuj.model.dto.LevelDto;
-import pl.niepracuj.model.dto.TechnologyDto;
 import pl.niepracuj.model.mapper.LevelMapper;
 import pl.niepracuj.repository.LevelRepository;
 
@@ -17,6 +16,7 @@ import java.util.stream.Collectors;
 public class LevelServiceImpl implements LevelService {
     private final LevelRepository levelRepository;
     private final LevelMapper levelMapper;
+
     @Override
     public List<LevelDto> getLevels() {
         return levelRepository.findAll().stream().map(levelMapper::toDto).collect(Collectors.toList());

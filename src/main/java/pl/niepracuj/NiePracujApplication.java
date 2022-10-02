@@ -11,6 +11,7 @@ public class NiePracujApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(NiePracujApplication.class);
     }
+
     public static void main(String[] args) {
         SpringApplication.run(NiePracujApplication.class, args);
     }

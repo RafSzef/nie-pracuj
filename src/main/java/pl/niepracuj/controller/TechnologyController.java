@@ -19,7 +19,7 @@ public class TechnologyController {
     }
 
     @PostMapping("/create")
-    public TechnologyDto createTechnology(@RequestBody TechnologyDto technologyDto){
+    public TechnologyDto createTechnology(@RequestBody TechnologyDto technologyDto) {
         return technologyService.createTechnology(technologyDto);
     }
 }

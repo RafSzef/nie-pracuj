@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public class TechnologyServiceImpl implements TechnologyService {
     private final TechnologyRepository technologyRepository;
     private final TechnologyMapper technologyMapper;
+
     @Override
     public List<TechnologyDto> getAllTechnologies() {
         return technologyRepository.findAll().stream().map(technologyMapper::toDto)

@@ -8,7 +8,7 @@ import pl.niepracuj.model.entity.Technology;
 public class TechnologyMapper {
     public TechnologyDto toDto(Technology technology) {
         return TechnologyDto.builder()
-                .id(technology.getId()  )
+                .id(technology.getId())
                 .name(technology.getName())
                 .build();
     }
@@ -19,6 +19,7 @@ public class TechnologyMapper {
                 .name(technologyDto.getName())
                 .build();
     }
+
     public Technology toNewEntity(TechnologyDto technologyDto) {
         return Technology.builder()
                 .name(technologyDto.getName())
