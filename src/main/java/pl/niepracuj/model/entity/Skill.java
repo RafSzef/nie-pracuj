@@ -1,30 +1,26 @@
-package pl.pracuj.niepracuj.model.entity;
+package pl.niepracuj.model.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "skills")
-@Setter
 @Getter
-//@Builder
-@ToString
+@Setter
 @NoArgsConstructor
-@EqualsAndHashCode
-//@AllArgsConstructor
-public class Skills {
-
+public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     private String name;
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @Column
-//    private SkillLevels levelId;
 
     @ManyToMany(mappedBy = "skills")
     private Set<Advertisement> advertisements;
-
+    @ManyToOne
+    private Level level;
 }
