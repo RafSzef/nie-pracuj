@@ -32,7 +32,7 @@ import static pl.niepracuj.util.TestUtils.toJson;
         @Sql(scripts = "/sql/controller/advertisement.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
         @Sql(scripts = "/sql/controller/advertisement-cleanup.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 })
-public class AdvertisementControllerIT {
+public class AdvertisementControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
