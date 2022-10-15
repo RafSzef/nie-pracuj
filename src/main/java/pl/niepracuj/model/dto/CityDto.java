@@ -8,7 +8,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CityDto {
-    private long id;
+
+    private Long id;
+
     private String name;
-    private StateDto stateDto;
+
+    private StateDto state;
 }

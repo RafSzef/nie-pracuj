@@ -9,13 +9,15 @@ import javax.persistence.*;
 @Table(name = "seniorities")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Seniority {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     @Enumerated(EnumType.STRING)
     private SeniorityEnum name;
 }

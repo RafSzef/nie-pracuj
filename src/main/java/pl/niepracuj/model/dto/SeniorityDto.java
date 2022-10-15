@@ -5,10 +5,12 @@ import pl.niepracuj.model.enums.SeniorityEnum;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class SeniorityDto {
-    private long id;
+
+    private Long id;
+
     private SeniorityEnum name;
 }

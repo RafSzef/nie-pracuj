@@ -1,7 +1,6 @@
 package pl.niepracuj.model.enums;
 
 public enum TechnologyEnum {
-
     JS,
     HTML,
     PHP,
@@ -11,5 +10,6 @@ public enum TechnologyEnum {
     SCALA,
     MOBILE,
     TESTING,
-    DEVOPS
+    DEVOPS,
+    OTHER
 }

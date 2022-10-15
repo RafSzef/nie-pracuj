@@ -4,11 +4,14 @@ import lombok.*;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class LevelDto {
+
     private Long id;
+
     private String name;
+
     private Integer score;
 }

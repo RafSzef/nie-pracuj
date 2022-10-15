@@ -4,10 +4,12 @@ import lombok.*;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class SkillCreateDto {
+
     private String name;
+
     private Long levelId;
 }

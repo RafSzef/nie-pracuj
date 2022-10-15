@@ -1,22 +1,18 @@
 package pl.niepracuj.model.mapper;
 
 import org.springframework.stereotype.Component;
+import pl.niepracuj.model.dto.CompanyDto;
 import pl.niepracuj.model.dto.SeniorityDto;
+import pl.niepracuj.model.entity.Company;
 import pl.niepracuj.model.entity.Seniority;
 
 @Component
 public class SeniorityMapper {
+
     public SeniorityDto toDto(Seniority seniority) {
         return SeniorityDto.builder()
                 .id(seniority.getId())
                 .name(seniority.getName())
-                .build();
-    }
-
-    public Seniority toEntity(SeniorityDto seniorityDto) {
-        return Seniority.builder()
-                .id(seniorityDto.getId())
-                .name(seniorityDto.getName())
                 .build();
     }
 

@@ -4,13 +4,18 @@ import lombok.*;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class CompanyDto {
-    private long id;
+
+    private Long id;
+
     private String name;
-    private String address;
-    private Integer size;
+
     private String email;
+
+    private String address;
+
+    private Integer size;
 }

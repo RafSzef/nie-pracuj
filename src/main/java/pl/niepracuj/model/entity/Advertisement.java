@@ -1,33 +1,48 @@
 package pl.niepracuj.model.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
 @Table(name = "advertisements")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Advertisement {
 
-    private String name;
-    @Column(name = "publish_date")
-    private Instant publishDate;
-    @Column(name = "expire_date")
-    private Instant expireDate;
-    @Column(name = "salary_from")
-    private Long salaryFrom;
-    @Column(name = "salary_to")
-    private Long salaryTo;
-    private String description;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
+
+    private LocalDateTime publishDate;
+
+    private LocalDateTime expireDate;
+
+    private Long salaryFrom;
+
+    private Long salaryTo;
+
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    private Company company;
+
+    @ManyToOne
+    private Technology technology;
+
+    @ManyToOne
+    private Seniority seniority;
+
+    @ManyToOne
+    private City city;
 
     @ManyToMany
     @JoinTable(
@@ -35,21 +50,5 @@ public class Advertisement {
             joinColumns = @JoinColumn(name = "skill_id"),
             inverseJoinColumns = @JoinColumn(name = "adv_id")
     )
-    Set<Skill> skills;
-
-    @ManyToOne
-    @JoinColumn(name = "company_id", referencedColumnName = "id")
-    private Company company;
-
-    @ManyToOne
-    @JoinColumn(name = "technology_id", referencedColumnName = "id")
-    private Technology technology;
-
-    @ManyToOne
-    @JoinColumn(name = "seniority_id", referencedColumnName = "id")
-    private Seniority seniority;
-
-    @ManyToOne
-    @JoinColumn(name = "city_id", referencedColumnName = "id")
-    private City city;
+    private Set<Skill> skills;
 }

@@ -12,8 +12,10 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class State {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     private String name;
 }

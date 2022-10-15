@@ -3,7 +3,7 @@ package pl.niepracuj.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pl.niepracuj.model.dto.SeniorityDto;
-import pl.niepracuj.service.SeniorityService;
+import pl.niepracuj.service.seniority.SeniorityService;
 
 import java.util.List;
 
@@ -11,11 +11,12 @@ import java.util.List;
 @RequestMapping("/seniority")
 @RequiredArgsConstructor
 public class SeniorityController {
+
     private final SeniorityService seniorityService;
 
     @GetMapping("/all")
-    public List<SeniorityDto> getSeniority() {
-        return seniorityService.getSeniorities();
+    public List<SeniorityDto> getSeniorities() {
+        return seniorityService.getAllSeniorities();
     }
 
     @PostMapping("/create")

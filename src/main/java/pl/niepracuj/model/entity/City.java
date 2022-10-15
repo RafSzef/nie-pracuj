@@ -12,11 +12,13 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class City {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     private String name;
+
     @ManyToOne
-    @JoinColumn(name = "state_id", referencedColumnName = "id")
     private State state;
 }

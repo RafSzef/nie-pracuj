@@ -3,7 +3,7 @@ package pl.niepracuj.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pl.niepracuj.model.dto.LevelDto;
-import pl.niepracuj.service.LevelService;
+import pl.niepracuj.service.level.LevelService;
 
 import java.util.List;
 
@@ -11,11 +11,12 @@ import java.util.List;
 @RequestMapping("/level")
 @RequiredArgsConstructor
 public class LevelController {
+
     private final LevelService levelService;
 
     @GetMapping("/all")
     public List<LevelDto> getLevels() {
-        return levelService.getLevels();
+        return levelService.getAllLevels();
     }
 
     @PostMapping("/create")

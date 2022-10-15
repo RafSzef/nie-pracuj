@@ -10,20 +10,10 @@ public class CompanyMapper {
     public CompanyDto toDto(Company company) {
         return CompanyDto.builder()
                 .id(company.getId())
-                .address(company.getAddress())
-                .size(company.getSize())
                 .email(company.getEmail())
+                .size(company.getSize())
+                .address(company.getAddress())
                 .name(company.getName())
-                .build();
-    }
-
-    public Company toEntity(CompanyDto companyDto) {
-        return Company.builder()
-                .id(companyDto.getId())
-                .address(companyDto.getAddress())
-                .email(companyDto.getEmail())
-                .size(companyDto.getSize())
-                .name(companyDto.getName())
                 .build();
     }
 
