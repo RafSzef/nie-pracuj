@@ -4,7 +4,9 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.*;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
+import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,7 +25,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static pl.niepracuj.util.TestUtils.toJson;
+import static pl.niepracuj.util.TestUtils.toJsonString;
 
 //TODO Do naprawy ładowanie danych wejściowych
 @SpringBootTest
@@ -50,7 +52,7 @@ public class AdvertisementControllerTest {
         // given
         var criteria = AdvertisementSearchCriteriaDto.builder()
                 .technologyName(TechnologyEnum.JAVA).build();
-        var criteriaJson = toJson(criteria);
+        var criteriaJson = toJsonString(criteria);
 
         // when && then
         mockMvc.perform(post("/adv/search?page=0&size=10&sort=id,DESC")
@@ -73,7 +75,7 @@ public class AdvertisementControllerTest {
                 .cityName(city)
                 .seniorityName(seniority)
                 .build();
-        var criteriaJson = toJson(criteria);
+        var criteriaJson = toJsonString(criteria);
 
         // when && then
         mockMvc.perform(post("/adv/search?page=0&size=10&sort=id,DESC")
