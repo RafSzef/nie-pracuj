@@ -46,14 +46,14 @@ class AdvertisementControllerGroovyTest extends Specification {
         result == 2
     }
 
-    def "should get all advertisements" () {
-        given:
-        def url = "/adv/all"
-        when:
-        def response = mockMvc.perform(get(url)).andReturn().response
-        then:
-        response.status == 200
-    }
+//    def "should get all advertisements" () {
+//        given:
+//        def url = "/adv/all"
+//        when:
+//        def response = mockMvc.perform(get(url)).andReturn().response
+//        then:
+//        response.status == 200
+//    }
 
     def "numbers to power" (int a, int b, int c) {
         expect:

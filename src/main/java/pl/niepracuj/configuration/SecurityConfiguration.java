@@ -17,9 +17,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/adv/create", "/company/create", "/level/create",
-                        "/seniority/create", "/technology/create", "/user/login", "/adv/search**")
-                .hasAnyAuthority("ROLE_ADMIN")
+//                .antMatchers(HttpMethod.POST, "/adv/create", "/company/create", "/level/create",
+//                        "/seniority/create", "/technology/create", "/user/login")
+//                .hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.POST, "/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/**").permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .httpBasic()
