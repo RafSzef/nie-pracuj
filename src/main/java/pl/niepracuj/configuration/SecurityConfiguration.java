@@ -16,15 +16,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/adv/create", "/company/create", "/level/create",
-                        "/seniority/create", "/technology/create", "/user/login", "/adv/search**")
-                .hasAnyAuthority("ROLE_ADMIN")
-                .anyRequest().permitAll()
-                .and()
-                .httpBasic()
-                .and()
-                .csrf().disable();
+//        http.authorizeRequests()
+//                .antMatchers(HttpMethod.POST, "/adv/create", "/company/create", "/level/create",
+//                        "/seniority/create", "/technology/create", "/user/login", "/adv/search**")
+//                .hasAnyAuthority("ROLE_ADMIN")
+//                .anyRequest().permitAll()
+//                .and()
+//                .httpBasic()
+//                .and()
+//                .csrf().disable();
     }
 
     @Override
