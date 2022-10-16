@@ -8,6 +8,7 @@ import pl.niepracuj.service.seniority.SeniorityService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/seniority")
 @RequiredArgsConstructor
 public class SeniorityController {

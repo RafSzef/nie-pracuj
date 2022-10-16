@@ -8,6 +8,7 @@ import pl.niepracuj.service.level.LevelService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/level")
 @RequiredArgsConstructor
 public class LevelController {

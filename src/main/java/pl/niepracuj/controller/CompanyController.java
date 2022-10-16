@@ -8,6 +8,7 @@ import pl.niepracuj.service.company.CompanyService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/company")
 @RequiredArgsConstructor
 public class CompanyController {
@@ -24,3 +25,4 @@ public class CompanyController {
         return companyService.createCompany(companyDto);
     }
 }
+

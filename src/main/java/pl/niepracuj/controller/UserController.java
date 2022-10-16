@@ -11,6 +11,7 @@ import pl.niepracuj.service.user.UserService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {

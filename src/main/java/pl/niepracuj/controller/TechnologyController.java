@@ -10,6 +10,7 @@ import pl.niepracuj.service.technology.TechnologyService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/technology")
 @RequiredArgsConstructor
 public class TechnologyController {
